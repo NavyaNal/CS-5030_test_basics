@@ -29,8 +29,17 @@ class todoservice{
     }
 
     delete_todo(id){
-        // Your code here
+        for (var i = 0; i < this.todo_data.todo.length; i++) {
+            var obj = this.todo_data.todo[i];
+        
+            if (obj.title == title) {
+                this.todo_data.todo.splice(i, 1);
+            }
+        }
+        return this.todos
     }
+
+
 
     update_todo(id, todo){
         // Your code here
