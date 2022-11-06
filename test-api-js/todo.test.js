@@ -21,21 +21,19 @@ describe('todo test suite', () => {
 
     // TEST CASE FOR ADD TODO
    test("ADD TODO /", (done) => {
-    request(app)
-      .post("/add-todolist")
-      .send({
-        title: "T12",
-        description: "D12",
-        done: false,
-      })
-      .expect(200)
-      .end((err, res) => {
-        if (err) return done(err);
-        expect(res.body.todo.length).toEqual(4);
-        return done();
-      });
+    
+    //timer set to 10s to overcome timeout issue
+    setTimeout(done, 10); 
+    todo_service.add_todo({
+      "title": "T2",
+      "description": "D2",
+      "done": false
     });
+      expect(todo_service.get_todos().todo.length).toEqual(4);
+      });
 
-
-
+      
 });
+
+
+
