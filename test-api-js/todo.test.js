@@ -24,15 +24,23 @@ describe('todo test suite', () => {
     
     //timer set to 10s to overcome timeout issue
     setTimeout(done, 10); 
-    todo_service.add_todo({
+       todo_service.add_todo({
       "title": "T2",
       "description": "D2",
       "done": false
-    });
-      expect(todo_service.get_todos().todo.length).toEqual(4);
-      });
+       });
 
-      
+      expect(todo_service.get_todos().todo.length).toEqual(4);
+    });
+
+    test("DELETE TODO /", (done) => {
+      //timer set to 10s to overcome timeout issue
+      setTimeout(done, 10); 
+      todo_service.delete_todo("T2");
+      expect(todo_service.get_todos().todo.length).toEqual(3);
+    });
+
+
 });
 
 

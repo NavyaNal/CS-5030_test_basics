@@ -32,7 +32,7 @@ class todoservice{
         for (var i = 0; i < this.todo_data.todo.length; i++) {
             var obj = this.todo_data.todo[i];
         
-            if (obj.title == title) {
+            if (obj.title == id) {
                 this.todo_data.todo.splice(i, 1);
             }
         }
