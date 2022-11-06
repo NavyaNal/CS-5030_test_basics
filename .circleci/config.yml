@@ -28,6 +28,19 @@ jobs:
        - run:
            name: run tests
            command: cd test_javascript && npm run test
+  build-and-test-api:
+     
+     docker:
+       - image: cimg/node:14.20.0
+     steps:
+       - checkout
+       - run:
+           name: install dependencies
+           command: cd test-api-js && npm install
+      
+       - run:
+           name: run tests
+           command: cd test-api-js && npm run test
 workflows:
   sample:
     jobs:
@@ -37,3 +50,4 @@ workflows:
               only:
                 - master
       - build-and-test-javascript
+      -build-and-test-api
