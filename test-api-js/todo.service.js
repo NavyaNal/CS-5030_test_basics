@@ -42,7 +42,17 @@ class todoservice{
 
 
     update_todo(id, todo){
-        // Your code here
+        
+        for (var i = 0; i < this.todo_data.todo.length; i++) {
+            var obj = this.todo_data.todo[i];
+        
+            if (obj.title == id) {
+                this.todo_data.todo[i].title = todo.title
+                this.todo_data.todo[i].description = todo.description
+                this.todo_data.todo[i].done = todo.done
+            }
+        }
+        return this.todos
     }
 }
 
