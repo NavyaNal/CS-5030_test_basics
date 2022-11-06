@@ -50,4 +50,4 @@ workflows:
               only:
                 - master
       - build-and-test-javascript
-      -build-and-test-testcases
+      - build-and-test-testcases
