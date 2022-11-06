@@ -19,9 +19,23 @@ describe('todo test suite', () => {
         expect(todo_service.get_todos().todo.length).toEqual(3);
     });
 
-    
+    // TEST CASE FOR ADD TODO
+   test("ADD TODO /", (done) => {
+    request(app)
+      .post("/add-todolist")
+      .send({
+        title: "T12",
+        description: "D12",
+        done: false,
+      })
+      .expect(200)
+      .end((err, res) => {
+        if (err) return done(err);
+        expect(res.body.todo.length).toEqual(4);
+        return done();
+      });
+    });
 
-    // Write all your test cases here that corresponds to software requirements
 
 
 });
