@@ -56,9 +56,9 @@ describe('todo test suite', () => {
        const index=todo_service.get_todos().todo.indexOf('T1');
 
       expect(todo_service.get_todos().todo.length).toEqual(3);
-      expect(todo_service.get_todos().todo.at(index).title).toEqual('T1');
-      expect(todo_service.get_todos().todo.at(index).description).toEqual('D3');
-      expect(todo_service.get_todos().todo.at(index).done).toEqual(true);
+      expect(todo_service.get_todos().todo[index].title).toEqual('T1');
+      expect(todo_service.get_todos().todo[index].description).toEqual('D3');
+      expect(todo_service.get_todos().todo[index].done).toEqual(true);
 
 
 
