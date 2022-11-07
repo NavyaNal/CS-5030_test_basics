@@ -32,7 +32,7 @@ class todoservice{
         for (var i = 0; i < this.todo_data.todo.length; i++) {
             var obj = this.todo_data.todo[i];
         
-            if (obj.title == id) {
+            if (obj.id == id) {
                 this.todo_data.todo.splice(i, 1);
             }
         }
@@ -42,17 +42,15 @@ class todoservice{
 
 
     update_todo(id, todo){
-        
-        for (var i = 0; i < this.todo_data.todo.length; i++) {
-            var obj = this.todo_data.todo[i];
-        
-            if (obj.title == id) {
-                this.todo_data.todo[i].title = todo.title
-                this.todo_data.todo[i].description = todo.description
-                this.todo_data.todo[i].done = todo.done
-            }
-        }
-        return this.todos
+    
+
+        var index = this.todos.todo.findIndex((obj) => obj.id == id);
+
+        this.todos.todo[index].id = todo.id;
+        this.todos.todo[index].title = todo.title;
+        this.todos.todo[index].description = todo.description;
+        this.todos.todo[index].done = todo.done;
+        return this.todos;
     }
 }
 
