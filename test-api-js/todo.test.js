@@ -69,6 +69,7 @@ describe('todo test suite', () => {
       //getting index of provided id
       var index = todo_service.get_todos().todo.findIndex(todo_update => todo_update.id == 1);
 
+      expect(todo_service.get_todos().todo.length).toEqual(4);
       expect(todo_service.get_todos().todo[index].id).toEqual(1);
       expect(todo_service.get_todos().todo[index].title).toEqual("T1");
       expect(todo_service.get_todos().todo[index].done).toEqual(true);
