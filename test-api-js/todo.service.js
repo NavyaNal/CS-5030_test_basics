@@ -43,8 +43,8 @@ class todoservice{
 
     update_todo(id, todo){
     
-
-        var index = this.todos.todo.findIndex((obj) => obj.id == id);
+        //getting index of todo where id matches
+        var index = this.todos.todo.findIndex(todo_update => todo_update.id == id);
 
         this.todos.todo[index].id = todo.id;
         this.todos.todo[index].title = todo.title;

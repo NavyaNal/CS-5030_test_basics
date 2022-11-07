@@ -20,8 +20,9 @@ describe('todo test suite', () => {
         expect(todo_service.get_todos().todo.length).toEqual(3);
     });
 
-   // TEST CASE FOR ADD TODO
-   test("ADD TODO /", (done) => {
+
+    // TEST CASE FOR ADD TODO
+    test("ADD TODO /", (done) => {
     
       //timer set to 10s to overcome timeout issue
       setTimeout(done, 10); 
@@ -65,6 +66,8 @@ describe('todo test suite', () => {
         "description": "D3",
         "done": true,
       });
+
+      
 
       //getting index of provided id
       var index = todo_service.get_todos().todo.findIndex(todo_update => todo_update.id == 1);
