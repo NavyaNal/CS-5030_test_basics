@@ -48,17 +48,17 @@ describe('todo test suite', () => {
       //timer set to 10s to overcome timeout issue
       setTimeout(done, 10); 
       todo_service.update_todo('T1',{
-        title: "T1",
-        description: "D3",
-        done: true,
+        "title": "T1",
+        "description": "D3",
+        "done": true,
       });
       
-       const index=todo_service.get_todos().todo.indexOf((todoupdate)=>todoupdate.title=='T1');
+       const index=todo_service.get_todos().todo.indexOf('T1');
 
       expect(todo_service.get_todos().todo.length).toEqual(3);
-      expect(todo_service.get_todos().todo[index].title).toEqual('T1');
-      expect(todo_service.get_todos().todo[index].description).toEqual('D3');
-      expect(todo_service.get_todos().todo[index].done).toEqual(true);
+      expect(todo_service.get_todos().todo.at(index).title).toEqual('T1');
+      expect(todo_service.get_todos().todo.at(index).description).toEqual('D3');
+      expect(todo_service.get_todos().todo.at(index).done).toEqual(true);
 
 
 
